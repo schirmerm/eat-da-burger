@@ -1,13 +1,13 @@
 const {
-  pizzas: {
-      getPizzas
+  burgers: {
+      getBurgers
   }
 } = require('../controllers')
 
 module.exports = app => {
   app.get('/', (req,res) => {
-      getPizzas(pizzas => {
-          res.render('index',{ pizzas })
+      getBurgers(burgers => {
+          res.render('index',{ burgers })
       })
   })
 }

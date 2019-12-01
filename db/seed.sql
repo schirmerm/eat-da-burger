@@ -1,8 +1,8 @@
-USE pizza_db;
 
-INSERT INTO pizza(name, eaten)
-VALUES('Pepperoni', false), 
-      ('Cheese', false), 
-      ('BBQ Chicken', true), 
-      ('Hawaiian Pizza', true), 
-      ('Pesto Pizza', true);
+
+INSERT INTO burger(name, eaten)
+VALUES('Cheese Burger', false), 
+      ('Hamburger', false), 
+      ('BBQ Burger', true), 
+      ('Hawaiian Burger', true), 
+      ('Veggie Burger', true);

@@ -1,4 +1,4 @@
 module.exports = app => {
-  require('./pizzaRoutes.js')(app)
+  require('./burgerRoutes.js/index.js')(app)
   require('./viewRoutes.js')(app)
 }

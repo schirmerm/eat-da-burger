@@ -1,52 +1,52 @@
 const getPizzas = () => {
-  axios.get('/pizzas')
-  .then(pizzas => {
-    console.log(pizzas)
+  axios.get('/burgers')
+  .then(burgers => {
+    console.log(burgers)
   })
   .catch (e => console.error(e))
 }
 
 const addPizza = (name) => {
-  axios.post('/pizzas', {
+  axios.post('/burgers', {
     name,
     eaten: false
   })
   .then(() => {
-    console.log('pizza added')
+    console.log('burger added')
   })
   .catch(e => console.error(e))
 }
 
 const eatPizza = id => {
-axios.put(`/pizzas/${id}`)
+axios.put(`/burgers/${id}`)
 .then(() => {
-  console.log('Pizza Eaten')
+  console.log('Burger Eaten')
 })
 .catch(e => console.error(e))
 }
 
 const removePizza = id => {
-axios.delete(`/pizzas/${id}`)
+axios.delete(`/burgers/${id}`)
 .then(() => {
-  console.log('Pizza Removed')
+  console.log('Burger Removed')
 })
 .catch(e => console.error(e))
 }
 
-document.getElementById('addPizza').addEventListener('click', e => {
+document.getElementById('addBurger').addEventListener('click', e => {
   e.preventDefault()
-  addPizza(document.getElementById('pizza').value)
-  document.getElementById('pizza').value = ''
+  addPizza(document.getElementById('burger').value)
+  document.getElementById('burger').value = ''
   window.location.reload()
    
 })
 
 document.addEventListener('click', e => {
-  if(e.target.parentNode.className.includes('eatPizza')){
-  eatPizza(e.target.parentNode.dataset.pizza)
+  if(e.target.parentNode.className.includes('eatBurger')){
+  eatPizza(e.target.parentNode.dataset.burger)
   window.location.reload()
-  }else if(e.target.parentNode.className.includes('removePizza')){
-    removePizza(e.target.parentNode.dataset.pizza)
+  }else if(e.target.parentNode.className.includes('removeBurger')){
+    removePizza(e.target.parentNode.dataset.burger)
     window.location.reload()
   }
 })

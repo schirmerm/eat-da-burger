@@ -1,18 +1,18 @@
 const db = require('../config')
 
 module.exports = {
-        getPizzas(cb){
-            db.query('SELECT * FROM pizzas', (e,pizzas) => {
+        getBurgers(cb){
+            db.query('SELECT * FROM burgers', (e,burgers) => {
                 if(e){
                     console.log(e)
                 }
-                cb(pizzas)
+                cb(burgers)
             })
             
         },
 
-    addPizza(name, eaten, cb){
-        db.query(`INSERT INTO pizzas(name, eaten) VALUES( "${name}", ${eaten})`, e => {
+    addBurger(name, eaten, cb){
+        db.query(`INSERT INTO burgers(name, eaten) VALUES( "${name}", ${eaten})`, e => {
             if(e){
                 console.log(e)
             }
@@ -20,8 +20,8 @@ module.exports = {
         })
         
     },
-    eatPizza(id, cb){
-        db.query(`UPDATE pizzas SET eaten = true WHERE id = ${id}`, e => {
+    eatBurger(id, cb){
+        db.query(`UPDATE burgers SET eaten = true WHERE id = ${id}`, e => {
             if (e){
                 console.log(e)
             }
@@ -29,8 +29,8 @@ module.exports = {
         })
         
     },
-    removePizza(id,cb){
-        db.query(`DELETE FROM pizzas WHERE id = ${id}`, e => {
+    removeBurger(id,cb){
+        db.query(`DELETE FROM burgers WHERE id = ${id}`, e => {
             if(e){
                 console.log(e)
             }
